@@ -1,10 +1,12 @@
 <template>
-  <section class="playlist">
+  <section class=" container playlist">
       <Album/>
   </section>
 </template>
 
 <script>
+
+
 
 import Album from './Album.vue';
 
@@ -17,5 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@import "../assets/style/common";
 
 </style>

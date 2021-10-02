@@ -24,4 +24,8 @@ export default {
 
 @import './assets/style/common.scss';
 
+#app{
+  background-color: $BGcolorBody;
+}
+
 </style>

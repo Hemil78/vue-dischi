@@ -1,1 +1,20 @@
+/* bootstrap */
+@import '~bootstrap/scss/bootstrap.scss';
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+/* variabili */
 @import './variables.scss';
+
+/* common */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: $mainFont;
+}
+
