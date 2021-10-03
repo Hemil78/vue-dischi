@@ -1,12 +1,15 @@
 <template>
-  <div class="album">
 
+  <div >
+    
   </div>
+
 </template>
 
 <script>
 export default {
-    name: "Playlist",
+    name: "Album",
+    props: ['info']
 }
 </script>
 
@@ -14,4 +17,11 @@ export default {
 
 @import "../assets/style/common";
 
+
 </style>
+
+
+
+  
+
+
