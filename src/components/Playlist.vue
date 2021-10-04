@@ -3,18 +3,12 @@
   <section class="container">
 
     <div class="box-albums">
-        <div class="object-album" v-for="(elm, index) in albums" :key="index">
-            <div class="album-img">
-                <img :src="elm.poster" alt="elm.title">       
-            </div>
-            <div class="album-text">
-                <h3>{{elm.title}}</h3>
-                <p>{{elm.author}}</p>
-                <p>{{elm.year}}</p>
-            </div>
 
-            <Album/>
-        </div>
+        <Album class="object-album" v-for="(elm, index) in albums" :key="index"
+            :img="elm.poster"
+            :bigText="elm.title"
+            :smallText="elm.author"
+            :dateText="elm.year"/>    
 
     </div>
 
@@ -129,23 +123,8 @@ export default {
     margin: 10px;
     padding: 15px;
     background-color: $BGcolorHeader;
-
-    img{
-        width: 100%;
-    }
-    h3{
-        padding: 10px 0;
-        color: #fff;
-    }
-
-    p{
-        color: #5a6c74;
-    }
-
 }    
     
-
-
 </style>
 
 
