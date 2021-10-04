@@ -47,7 +47,7 @@ export default {
     }
 
     p{
-        color: #5a6c74;
+        color: $ColorSmallText;
         font-size: 14px;
     }
 }

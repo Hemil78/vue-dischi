@@ -2,6 +2,10 @@
 
   <section class="container">
 
+    <div class="search-album">
+        <Select/>
+    </div>
+
     <div class="box-albums">
 
         <Album class="object-album" v-for="(elm, index) in albums" :key="index"
@@ -22,11 +26,13 @@
 <script> 
 import axios from 'axios';            
 import Album from './Album.vue';
+import Select from './Select.vue';
 
 export default {
     name: "Playlist",
     components: {
-        Album
+        Album,
+        Select
     },
     data() {
        return {
@@ -48,11 +54,16 @@ export default {
 
 @import "../assets/style/common";
 
+.search-album{
+    width: 100%;
+    text-align: center;
+}
+
 .box-albums{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding: 50px 0;
+    padding: 40px 0;
 }
 .object-album{
     width: calc(100% / 5 - 20px);

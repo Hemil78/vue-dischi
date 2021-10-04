@@ -1,6 +1,10 @@
 <template>
   <header>
-    <img src="../assets/images/spotify-logo.png" alt="logo-spotify">
+
+    <div class="logo-spotify">
+      <img src="../assets/images/spotify-logo.png" alt="logo-spotify">
+    </div>
+
   </header>
 </template>
 
@@ -23,5 +27,6 @@ header{
     width: 60px;
   }
 }
+
 
 </style>
