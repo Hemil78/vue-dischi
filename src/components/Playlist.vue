@@ -3,12 +3,12 @@
   <section class="container">
 
     <div class="search-album">
-        <Select/>
+        <Select @search="searchEvent" :generi="generi"/>
     </div>
 
     <div class="box-albums">
 
-        <Album class="object-album" v-for="(elm, index) in albums" :key="index"
+        <Album class="object-album" v-for="(elm, index) in genereFilter" :key="index"
             :img="elm.poster"
             :bigText="elm.title"
             :smallText="elm.author"
@@ -36,7 +36,10 @@ export default {
     },
     data() {
        return {
-           albums: []
+           albums: [],
+           genere: "",
+           generi: []
+           
        } 
     },
     created() {
@@ -44,7 +47,33 @@ export default {
             .get("https://flynn.boolean.careers/exercises/api/array/music")
             .then( (res) =>{
                 this.albums = res.data.response;
+                this.albums.forEach(
+                    (album) => {
+                        if(!this.generi.includes(album.genre)) {
+                            this.generi.push(album.genre);
+                        }
+                    }
+                );
+
             });
+    },
+    methods: {
+        searchEvent(elm) {
+            this.genere = elm;
+            console.log(elm);
+        }
+    },
+    computed: {
+        genereFilter() {
+            return this.albums.filter(
+                (album) => {
+                    if(album.genre == this.genere || this.genere == "") {
+                        return true
+                    }
+                    return false
+                }
+            );
+        }
     }
     
 }

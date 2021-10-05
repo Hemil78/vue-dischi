@@ -1,11 +1,11 @@
 <template>
     <div class="box-select">
-        <select name="" id="">
+        <select name="tipe-music" id="tipe-music" v-model="selectValue" @change="$emit('search', selectValue)">
             <option value="">Seleziona una categoria</option>
-            <option value="">Rock</option>
-            <option value="">Pop</option>
-            <option value="">Jazz</option>
-            <option value="">Metal</option>
+            <option :value="genere" v-for="genere in generi" :key="genere">{{genere}}</option>
+<!--             <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Metal">Metal</option> -->
         </select>
     </div>
 </template>
@@ -16,9 +16,10 @@ export default {
     
     data() {
        return {
-           
+           selectValue: ""
        } 
-    }
+    },
+    props: ["generi"]
     
 }
 </script>
@@ -35,9 +36,11 @@ export default {
         min-width: 500px;
         padding: 10px;
         border: none;
-        border-radius: 8px;
         background-color: $BGcolorHeader;
         color: $ColorSmallText;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
     }
 }
 
